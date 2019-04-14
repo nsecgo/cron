@@ -129,14 +129,14 @@ func BuildJobEvent(eventType int, job *Job) (jobEvent *JobEvent) {
 	}
 }
 
+var parser = cron.NewParser(cron.SecondOptional | cron.Minute | cron.Hour | cron.Dom | cron.Month | cron.Dow | cron.Descriptor)
+
 // 构造任务执行计划
 func BuildJobSchedulePlan(job *Job) (jobSchedulePlan *JobSchedulePlan, err error) {
-	var (
-		schedule cron.Schedule
-	)
+	var schedule cron.Schedule
 
 	// 解析JOB的cron表达式
-	if schedule, err = cron.ParseStandard(job.CronExpr); err != nil {
+	if schedule, err = parser.Parse(job.CronExpr); err != nil {
 		return
 	}
 

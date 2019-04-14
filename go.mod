@@ -1,4 +1,4 @@
-module github.com/nsecgo/crontab
+module github.com/nsecgo/cron
 
 go 1.12
 

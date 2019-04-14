@@ -1,7 +1,7 @@
 package worker
 
 import (
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"log"
 	"time"
 )
@@ -14,9 +14,7 @@ type Scheduler struct {
 	jobResultChan     chan *common.JobExecuteResult      // 任务结果队列
 }
 
-var (
-	G_scheduler *Scheduler
-)
+var G_scheduler *Scheduler
 
 // 处理任务事件
 func (scheduler *Scheduler) handleJobEvent(jobEvent *common.JobEvent) {

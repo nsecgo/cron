@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/nsecgo/crontab/master"
+	"github.com/nsecgo/cron/master"
 	"log"
 	"os"
 	"os/signal"

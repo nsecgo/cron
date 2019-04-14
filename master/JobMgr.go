@@ -3,7 +3,7 @@ package master
 import (
 	"context"
 	"encoding/json"
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"go.etcd.io/etcd/clientv3"
 	"go.etcd.io/etcd/mvcc/mvccpb"
 	"time"

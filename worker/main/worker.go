@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/nsecgo/crontab/worker"
+	"github.com/nsecgo/cron/worker"
 	"os"
 	"os/signal"
 )

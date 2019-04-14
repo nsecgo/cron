@@ -2,7 +2,7 @@ package master
 
 import (
 	"context"
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"time"

@@ -2,7 +2,7 @@ package master
 
 import (
 	"encoding/json"
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"log"
 	"net/http"
 	"strconv"

@@ -2,7 +2,7 @@ package worker
 
 import (
 	"context"
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"go.etcd.io/etcd/clientv3"
 	"net"
 	"time"

@@ -1,7 +1,7 @@
 package worker
 
 import (
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"math/rand"
 	"os/exec"
 	"time"

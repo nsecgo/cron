@@ -2,7 +2,7 @@ package worker
 
 import (
 	"context"
-	"github.com/nsecgo/crontab/common"
+	"github.com/nsecgo/cron/common"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"time"
@@ -56,12 +56,12 @@ func (logSink *LogSink) writeLoop() {
 
 			// 如果批次满了, 就立即发送
 			if len(logBatch.Logs) >= G_config.JobLogBatchSize {
+				// 取消定时器
+				commitTimer.Stop()
 				// 发送日志
 				logSink.saveLogs(logBatch)
 				// 清空logBatch
 				logBatch = nil
-				// 取消定时器
-				commitTimer.Stop()
 			}
 		case timeoutBatch = <-logSink.autoCommitChan: // 过期的批次
 			// 判断过期批次是否仍旧是当前的批次
